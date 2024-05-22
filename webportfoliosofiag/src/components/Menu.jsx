@@ -17,10 +17,11 @@ function Menu() {
       </button>
       {isOpen && (
         <div className="absolute right-0 mt-2 w-48 text-white rounded-lg shadow-lg bg-transparent z-20">
-          <a href="#experiencia" className="block px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Experiencia</a>
-          <a href="#about" className="block px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>About</a>
-          <a href="#tecnologias" className="block px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Tecnologías</a>
-          <a href="#contacto" className="block px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Contacto</a>
+          <a href="#about" className="block text-sm px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>About</a>
+          <a href="#experiencia" className="block text-sm px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Experience</a>
+          <a href="#projects" className="block text-sm px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Projects</a>
+          <a href="#tecnologias" className="block text-sm px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Technologies</a>
+          <a href="#contacto" className="block text-sm px-4 py-2 hover:text-yellow-400" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Contact</a>
         </div>
       )}
     </div>

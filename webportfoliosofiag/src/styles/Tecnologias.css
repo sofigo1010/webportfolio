@@ -1,0 +1,65 @@
+/* Importación de Tailwind CSS */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Definición de animaciones personalizadas */
+@keyframes rotateCW {
+  0% { transform: translate3d(0px, -50%, -1px) rotate(0deg); }
+  100% { transform: translate3d(0px, -50%, 0px) rotate(360deg); }
+}
+
+@keyframes rotateImage {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-rotateCW {
+  animation: rotateCW 20s linear infinite;
+}
+
+.rotate-slow {
+  animation: rotateImage 10s linear infinite;
+}
+
+/* Estilos específicos del componente Tecnologias */
+.void {
+  @apply mx-auto relative aspect-square max-w-[512px] overflow-hidden;
+}
+
+.void ul {
+  @apply relative list-none m-0 p-0 w-full aspect-square z-10;
+}
+
+.void ul:hover > * {
+    animation-play-state: running; /* No pausa en el hover */
+  }
+
+.void li {
+  @apply absolute top-1/2 w-full animate-rotateCW;
+}
+
+.void .card {
+  @apply w-[10%] flex justify-center items-center;
+}
+.void .card img {
+    @apply rotate-slow; /* Aplicar la clase de rotación a las imágenes */
+  }
+
+.void .center-circle,
+.void .second-circle,
+.void .last-circle {
+  @apply absolute aspect-square left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full;
+}
+
+.void .center-circle {
+  @apply w-[70px] bg-white;
+}
+
+.void .second-circle {
+  @apply w-[25%] bg-[#f5f4fe] opacity-50;
+}
+
+.void .last-circle {
+  @apply w-[40%] bg-[#f5f4fe] opacity-25;
+}

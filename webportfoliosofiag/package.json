@@ -20,6 +20,8 @@
     "three": "^0.164.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
+    "react-svg-loader": "^3.0.3",
     "three-stdlib": "^2.30.0"
   }
 }

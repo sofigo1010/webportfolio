@@ -1,18 +1,41 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import About from '../components/About.astro';
-import Contacto from '../components/Contacto.astro';
-import Experiencia from '../components/Experiencia.astro';
-import Tecnologias from '../components/Tecnologias.astro';
+import About from "../components/About.astro";
+import Contacto from "../components/Contacto.astro";
+import Experiencia from "../components/Experiencia.astro";
+import Projects from "../components/Projects";
+import Tecnologias from "../components/Tecnologias";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<Experiencia />
-		<About />
-		<Tecnologias />
-		<Contacto />
-	</main>
-</Layout>
-
-
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Sofia Garcia's Web Portfolio" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/src/styles/preloader.css" />
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="drop-container">
+        <div class="drop"></div>
+        <img src="/logo2.0.png" alt="Logo" class="logo" />
+      </div>
+    </div>
+    <div id="content" style="display: none;">
+      <Layout title="Welcome to Astro.">
+        <main>
+          <About />
+          <Experiencia />
+          <Projects client:load /> 
+          <Tecnologias client:load />
+          <Contacto />
+        </main>
+      </Layout>
+    </div>
+    <script src="/src/scripts/preloader.js"></script>
+  </body>
+</html>
