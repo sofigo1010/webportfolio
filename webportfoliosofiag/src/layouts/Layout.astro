@@ -53,6 +53,11 @@ const { title } = Astro.props;
   body {
     
     scroll-behavior: smooth;
+    background: linear-gradient(
+      to bottom,
+      oklch(28.94% 0.081 230),
+      oklch(13.65% 0.091 264.07)
+    );
   }
 
   body {
@@ -64,11 +69,7 @@ const { title } = Astro.props;
     width: 100vw;
     text-align: center;
     overflow-x: hidden;
-    background: linear-gradient(
-      to bottom,
-      oklch(28.94% 0.081 230),
-      oklch(13.65% 0.091 264.07)
-    );
+
     color: white;
     font-size: clamp(12px, 5.5vw, 28px);
   }
