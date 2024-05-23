@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(function () {
       preloader.style.display = "none";
       content.style.display = "block";
-    }, 1000); // Retraso de 3 segundos
+    }, 3000); // Retraso de 3 segundos
   });
 });
