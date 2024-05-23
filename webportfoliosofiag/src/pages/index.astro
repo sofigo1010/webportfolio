@@ -2,6 +2,7 @@
 import About from "../components/About.astro";
 import Contacto from "../components/Contacto.astro";
 import Experiencia from "../components/Experience.jsx";
+import Header from "../components/Header.astro";
 import Projects from "../components/Projects";
 import Tecnologias from "../components/Tecnologias";
 import Layout from "../layouts/Layout.astro";
@@ -26,6 +27,7 @@ import "../styles/preloader.css";
     </div>
     <div id="content" style="display: none;">
       <Layout title="Welcome to Astro.">
+        <Header />
         <main>
           <About />
           <Experiencia client:load />

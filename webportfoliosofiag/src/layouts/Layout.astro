@@ -18,7 +18,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
- 
+  <body class="">
     <div id="surface"></div>
     <div id="caustics"></div>
     <div id="bg"></div>
@@ -27,8 +27,8 @@ const { title } = Astro.props;
       <div id="sun_layer2"></div>
       <div id="sun_layer3"></div>
     </div>
-
-  <Header />
+  </body>
+  
   <slot />
 </html>
 
