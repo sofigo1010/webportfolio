@@ -1,9 +1,7 @@
-/* Importación de Tailwind CSS */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* Definición de animaciones personalizadas */
 @keyframes rotateCW {
   0% { transform: translate3d(0px, -50%, -1px) rotate(0deg); }
   100% { transform: translate3d(0px, -50%, 0px) rotate(360deg); }
@@ -22,7 +20,7 @@
   animation: rotateImage 10s linear infinite;
 }
 
-/* Estilos específicos del componente Tecnologias */
+
 .void {
   @apply mx-auto relative aspect-square max-w-[512px] overflow-hidden;
 }
@@ -32,7 +30,7 @@
 }
 
 .void ul:hover > * {
-    animation-play-state: running; /* No pausa en el hover */
+    animation-play-state: running; 
   }
 
 .void li {
@@ -43,7 +41,7 @@
   @apply w-[10%] flex justify-center items-center;
 }
 .void .card img {
-    @apply rotate-slow; /* Aplicar la clase de rotación a las imágenes */
+    @apply rotate-slow; 
   }
 
 .void .center-circle,

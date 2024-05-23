@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import "@fontsource-variable/cinzel"; // Importing Cinzel Variable font
+import "@fontsource-variable/cinzel"; 
 import AstroIcon from "./icons/AstroIcon.jsx";
 import AwsIcon from "./icons/Aws.jsx";
 import CssIcon from "./icons/Css.jsx";
@@ -46,8 +46,8 @@ const slides = [
     subtitle: "Informational",
     description:
       "This project is an informational vlog about TV series, accessible exclusively through reading, featuring a private /admin route that leads to a dashboard for adding, deleting, editing, and updating posts. The vlog aims to provide detailed insights and discussions on various television series in a user-friendly format.",
-    image: "/vlog.png",
-    technologies: ["React", "JavaScript", "CSS"],
+    image: "vlog.png",
+    technologies: ["HTML", "JavaScript", "CSS", "Docker", "Express", "Vite", "React"],
     href: "http://18.225.11.137:6900",
   },
   {
@@ -55,7 +55,7 @@ const slides = [
     subtitle: "Leveraging an API for Enhanced Group Chat Interactions",
     description:
       "This project features a group chat interface developed solely with HTML, CSS, and JavaScript, connecting seamlessly with an external API. Anyone can interact within the chat by connecting to the API, enabling real-time communication and collaboration.",
-    image: "./chat.png",
+    image: "chat.png",
     technologies: ["HTML", "CSS", "JavaScript"],
     href: "http://18.225.11.137:1802",
   },
@@ -64,8 +64,8 @@ const slides = [
     subtitle: "Enhanced Reliability through Integrated Testing",
     description:
       "This calculator operates with keyboard input and is equipped with five integrated tests to ensure functionality and accuracy. It utilizes Storybook for component-based development, allowing for interactive testing and fine-tuning of the UI components.",
-    image: "/calculator.png",
-    technologies: ["React", "Nodejs", "CSS"],
+    image: "calculator.png",
+    technologies: ["HTML", "CSS", "JavaScript", "React", "Vite"],
     href: "http://18.225.11.137:1302",
   },
   {
@@ -73,8 +73,8 @@ const slides = [
     subtitle: "Mastering CSS Through Artistic Expression",
     description:
       "This project showcases a drawing entirely created using CSS, serving as a learning tool to enhance and develop skills in this language. The artistic endeavor in CSS not only demonstrates creative capabilities but also deepens understanding of CSS properties and layout techniques.",
-    image: "/hijitas.png",
-    technologies: ["React", "CSS", "JavaScript"],
+    image: "hijitas.png",
+    technologies: ["HTML", "CSS"],
     href: "http://18.225.11.137:3300",
   },
   {
@@ -82,10 +82,10 @@ const slides = [
     subtitle: "Dynamic Storytelling Experience",
     description:
       "This web page narrates a story using HTML and CSS, featuring a unique progress indicator that updates as the reader approaches the end. This innovative design enhances engagement by visually displaying how much of the story remains, providing a captivating and interactive reading experience.",
-    image: "/opciones.png",
-    technologies: ["React", "JavaScript", "CSS"],
+    image: "opciones.png",
+    technologies: ["HTML", "CSS"],
     href: "http://18.225.11.137:6969",
-  },
+  }
 ];
 
 const initialState = {
@@ -96,14 +96,14 @@ const slidesReducer = (state, event) => {
   if (event.type === "NEXT") {
     return {
       ...state,
-      slideIndex: (state.slideIndex + 1) % slides.length,
+      slideIndex: (state.slideIndex - 1) % slides.length,
     };
   }
   if (event.type === "PREV") {
     return {
       ...state,
       slideIndex:
-        state.slideIndex === 0 ? slides.length - 1 : state.slideIndex - 1,
+        state.slideIndex === 0 ? slides.length + 1 : state.slideIndex + 1,
     };
   }
   return state;
@@ -139,14 +139,11 @@ function Slide({ slide, offset }) {
           transform: `perspective(1000px) translateX(calc(100% * var(--offset))) rotateY(calc(-45deg * var(--dir)))`,
         }}
       >
-        <div className="slideHoverOverlay absolute inset-0 bg-black bg-opacity-50 flex justify-between items-start opacity-0 transition-opacity duration-300 ease-in-out p-4">
-          <div className="text-left text-white z-10 w-1/3">
-            <h2 className="text-4xl mb-2 font-bold">{slide.title}</h2>
-            <p className="text-2xl mb-4">{slide.description}</p>
-          </div>
-          <div className="flex flex-col items-center text-white z-10 w-1/3">
-            <p className="text-2xl mb-2">Tecnologías utilizadas:</p>
-            <div className="flex flex-wrap mb-4 space-x-4 text-2xl">
+        <div className="slideHoverOverlay absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center opacity-0 transition-opacity duration-300 ease-in-out p-4">
+          <div className="text-white z-10 w-2/3 text-center">
+            <h2 className="text-lg mb-2 font-bold">{slide.title}</h2>
+            <p className="text-sm opacity-80 mb-4">{slide.description}</p>
+            <div className="flex justify-center space-x-4">
               {slide.technologies.map((tech, index) => {
                 const IconComponent = iconMap[tech];
                 return IconComponent ? (
@@ -176,7 +173,7 @@ function Projects() {
         </button>
         {slides.map((slide, i) => {
           let offset = (state.slideIndex - i + slides.length) % slides.length;
-          if (Math.abs(offset) > 1) offset = offset > 0 ? -1 : 1; // Ensuring only adjacent slides are displayed
+          if (Math.abs(offset) > 1) offset = offset > 0 ? -1 : 1; 
           return <Slide slide={slide} offset={offset} key={i} />;
         })}
         <button
@@ -227,15 +224,21 @@ function Projects() {
 
         .slideHoverOverlay {
           display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-          align-items: flex-start;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
         .slideHoverOverlay p,
-        .slideHoverOverlay h2,
-        .slideHoverOverlay span {
+        .slideHoverOverlay h2 {
           font-weight: bold;
+        }
+
+        .slideHoverOverlay .flex {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
         }
       `}</style>
     </section>

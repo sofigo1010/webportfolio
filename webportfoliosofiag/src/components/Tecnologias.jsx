@@ -18,9 +18,9 @@ import TailwindcssIcon from "./icons/Tailwindcss.jsx";
 import VercelIcon from "./icons/Vercel.jsx";
 import ViteIcon from "./icons/Vite.jsx";
 
-import "../styles/Tecnologias.css"; // Importa el archivo CSS específico
+import "../styles/Tecnologias.css"; 
 
-// Lista de componentes SVG
+
 const icons = [
   AstroIcon,
   AwsIcon,
@@ -40,7 +40,6 @@ const icons = [
   TailwindcssIcon,
   VercelIcon,
   ViteIcon,
-  // Agrega más íconos según sea necesario
 ];
 
 const Tecnologias = () => {

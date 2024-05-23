@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '@fontsource-variable/cinzel'; // Importing Cinzel Variable font
+import '@fontsource-variable/cinzel'; 
 
 function Menu() {
   const [isOpen, setIsOpen] = useState(false);
