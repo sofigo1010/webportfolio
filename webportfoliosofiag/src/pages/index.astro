@@ -5,7 +5,7 @@ import Experiencia from "../components/Experience.jsx";
 import Projects from "../components/Projects";
 import Tecnologias from "../components/Tecnologias";
 import Layout from "../layouts/Layout.astro";
-import "../styles/preloader.css"
+import "../styles/preloader.css";
 ---
 
 <!doctype html>
@@ -28,8 +28,8 @@ import "../styles/preloader.css"
       <Layout title="Welcome to Astro.">
         <main>
           <About />
-          <Experiencia client:load/>
-          <Projects client:load /> 
+          <Experiencia client:load />
+          <Projects client:load />
           <Tecnologias client:load />
           <Contacto />
         </main>
