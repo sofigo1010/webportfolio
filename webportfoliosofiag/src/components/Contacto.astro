@@ -1,4 +1,97 @@
-<section id="contacto" class="p-6">
-    <h2 class="text-2xl" style={{ fontFamily: 'Cinzel Variable, serif', textTransform: 'uppercase' }}>Contacto</h2>
-  </section>
-  
+---
+import File from "./icons/File.astro";
+import Mail from "./icons/Mail.astro";
+import GitHub from "./icons/Github.astro";
+import Linkedin from "./icons/Linkedin.astro";
+---
+
+<section id="contacto" class="p-6 flex flex-col items-center">
+  <h2 class="text-2xl uppercase mb-6">Contact</h2>
+  <div class="box flex flex-col items-center sm:flex-row">
+    <a
+      class="social"
+      href="mailto:sofia.go1010@hotmail.com"
+      target="_blank"
+      rel="noopener"
+    >
+      <Mail class="w-5 h-5 sm:w-6 sm:h-6" />
+      <div class="content">Mail</div>
+    </a>
+    <a
+      class="social"
+      href="https://github.com/sofigo1010"
+      target="_blank"
+      rel="noopener"
+    >
+      <GitHub class="w-5 h-5 sm:w-6 sm:h-6" />
+      <div class="content">GitHub</div>
+    </a>
+    <a
+      class="social"
+      href="https://www.linkedin.com/in/sofia-garcia-orellana/"
+      target="_blank"
+      rel="noopener"
+    >
+      <Linkedin class="w-5 h-5 sm:w-6 sm:h-6" />
+      <div class="content">LinkedIn</div>
+    </a>
+    <a class="social" href="/CV.pdf" target="_blank" rel="noopener">
+      <File class="w-5 h-5 sm:w-6 sm:h-6" />
+      <div class="content">File</div>
+    </a>
+  </div>
+</section>
+
+<style>
+  .box {
+    align-items: center;
+    padding: 10px;
+  }
+
+  .social {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    padding: 15px 20px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.25);
+    transition:
+      background-color 0.3s,
+      border 0.3s;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .social:hover {
+    --tw-scale-x: 1.1;
+    --tw-scale-y: 1.1;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+  }
+
+  .content {
+    font-size: 1.2rem;
+    margin-left: 10px;
+  }
+
+  @media only screen and (max-width: 400px) {
+    .social {
+      width: 90%;
+    }
+    .content {
+      font-size: 1rem;
+    }
+  }
+
+  @media only screen and (max-width: 250px) {
+    .content {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+  }
+</style>

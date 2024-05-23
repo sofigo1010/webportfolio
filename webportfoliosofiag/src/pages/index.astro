@@ -1,7 +1,7 @@
 ---
 import About from "../components/About.astro";
 import Contacto from "../components/Contacto.astro";
-import Experiencia from "../components/Experiencia.astro";
+import Experiencia from "../components/Experience.jsx";
 import Projects from "../components/Projects";
 import Tecnologias from "../components/Tecnologias";
 import Layout from "../layouts/Layout.astro";
@@ -15,7 +15,6 @@ import Layout from "../layouts/Layout.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
     <link rel="stylesheet" href="/src/styles/preloader.css" />
   </head>
   <body>
@@ -29,7 +28,7 @@ import Layout from "../layouts/Layout.astro";
       <Layout title="Welcome to Astro.">
         <main>
           <About />
-          <Experiencia />
+          <Experiencia client:load/>
           <Projects client:load /> 
           <Tecnologias client:load />
           <Contacto />

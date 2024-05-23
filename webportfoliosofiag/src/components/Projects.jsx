@@ -25,48 +25,66 @@ const iconMap = {
   CSS: CssIcon,
   HTML: HtmlIcon,
   Nodejs: NodejsIcon,
+  Astro: AstroIcon,
+  Aws: AwsIcon,
+  Docker: DockerIcon,
+  Express: ExpressIcon,
+  Git: GitIcon,
+  Github: GithubIcon,
+  Java: JavaIcon,
+  Mysql: MysqlIcon,
+  Postgresql: PostgresqlIcon,
+  Python: PythonIcon,
+  Tailwindcss: TailwindcssIcon,
+  Vercel: VercelIcon,
+  Vite: ViteIcon,
 };
 
 const slides = [
   {
-    title: "Machu Picchu",
-    subtitle: "Peru",
-    description: "Adventure is never far away",
-    image:
-      "https://images.unsplash.com/photo-1571771019784-3ff35f4f4277?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+    title: "Tv Series Vlog",
+    subtitle: "Informational",
+    description:
+      "This project is an informational vlog about TV series, accessible exclusively through reading, featuring a private /admin route that leads to a dashboard for adding, deleting, editing, and updating posts. The vlog aims to provide detailed insights and discussions on various television series in a user-friendly format.",
+    image: "/vlog.png",
     technologies: ["React", "JavaScript", "CSS"],
+    href: "http://18.225.11.137:6900",
   },
   {
-    title: "Chamonix",
-    subtitle: "France",
-    description: "Let your dreams come true",
-    image:
-      "https://images.unsplash.com/photo-1581836499506-4a660b39478a?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+    title: "Group Chat",
+    subtitle: "Leveraging an API for Enhanced Group Chat Interactions",
+    description:
+      "This project features a group chat interface developed solely with HTML, CSS, and JavaScript, connecting seamlessly with an external API. Anyone can interact within the chat by connecting to the API, enabling real-time communication and collaboration.",
+    image: "./chat.png",
     technologies: ["HTML", "CSS", "JavaScript"],
+    href: "http://18.225.11.137:1802",
   },
   {
-    title: "Mimisa Rocks",
-    subtitle: "Australia",
-    description: "A piece of heaven",
-    image:
-      "https://images.unsplash.com/photo-1566522650166-bd8b3e3a2b4b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
-    technologies: ["React", "Nodejs", "React"],
+    title: "Calculator with Tests",
+    subtitle: "Enhanced Reliability through Integrated Testing",
+    description:
+      "This calculator operates with keyboard input and is equipped with five integrated tests to ensure functionality and accuracy. It utilizes Storybook for component-based development, allowing for interactive testing and fine-tuning of the UI components.",
+    image: "/calculator.png",
+    technologies: ["React", "Nodejs", "CSS"],
+    href: "http://18.225.11.137:1302",
   },
   {
-    title: "Four",
-    subtitle: "Australia",
-    description: "A piece of heaven",
-    image:
-      "https://images.unsplash.com/flagged/photo-1564918031455-72f4e35ba7a6?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+    title: "Drawing Made using CSS",
+    subtitle: "Mastering CSS Through Artistic Expression",
+    description:
+      "This project showcases a drawing entirely created using CSS, serving as a learning tool to enhance and develop skills in this language. The artistic endeavor in CSS not only demonstrates creative capabilities but also deepens understanding of CSS properties and layout techniques.",
+    image: "/hijitas.png",
     technologies: ["React", "CSS", "JavaScript"],
+    href: "http://18.225.11.137:3300",
   },
   {
-    title: "Five",
-    subtitle: "Australia",
-    description: "A piece of heaven",
-    image:
-      "https://images.unsplash.com/photo-1579130781921-76e18892b57b?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ",
+    title: "Story with Progress",
+    subtitle: "Dynamic Storytelling Experience",
+    description:
+      "This web page narrates a story using HTML and CSS, featuring a unique progress indicator that updates as the reader approaches the end. This innovative design enhances engagement by visually displaying how much of the story remains, providing a captivating and interactive reading experience.",
+    image: "/opciones.png",
     technologies: ["React", "JavaScript", "CSS"],
+    href: "http://18.225.11.137:6969",
   },
 ];
 
@@ -95,7 +113,10 @@ function Slide({ slide, offset }) {
   const active = offset === 0 ? true : null;
 
   return (
-    <div
+    <a
+      href={slide.href}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`slide ${active ? "active" : ""}`}
       data-active={active}
       style={{
@@ -119,22 +140,24 @@ function Slide({ slide, offset }) {
         }}
       >
         <div className="slideHoverOverlay absolute inset-0 bg-black bg-opacity-50 flex justify-between items-start opacity-0 transition-opacity duration-300 ease-in-out p-4">
-          <div className="text-left text-white z-10">
+          <div className="text-left text-white z-10 w-1/3">
             <h2 className="text-4xl mb-2 font-bold">{slide.title}</h2>
             <p className="text-2xl mb-4">{slide.description}</p>
           </div>
-          <div className="flex flex-col items-center text-white z-10">
+          <div className="flex flex-col items-center text-white z-10 w-1/3">
             <p className="text-2xl mb-2">Tecnologías utilizadas:</p>
-            <div className="flex mb-4 space-x-4 text-2xl">
+            <div className="flex flex-wrap mb-4 space-x-4 text-2xl">
               {slide.technologies.map((tech, index) => {
                 const IconComponent = iconMap[tech];
-                return <IconComponent key={index} className="w-8 h-8 text-white" />;
+                return IconComponent ? (
+                  <IconComponent key={index} className="w-8 h-8 text-white" />
+                ) : null;
               })}
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 }
 
@@ -143,12 +166,7 @@ function Projects() {
 
   return (
     <section id="projects" className="p-6 flex flex-col items-center">
-      <h2
-        className="text-2xl uppercase mb-6"
-        style={{ fontFamily: "Cinzel Variable, serif" }}
-      >
-        Projects
-      </h2>
+      <h2 className="text-2xl uppercase mb-6">Projects</h2>
       <div className="slides relative overflow-hidden w-full h-96">
         <button
           className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-5xl z-10"
@@ -156,8 +174,9 @@ function Projects() {
         >
           ‹
         </button>
-        {[...slides, ...slides, ...slides].map((slide, i) => {
-          let offset = slides.length + (state.slideIndex - i);
+        {slides.map((slide, i) => {
+          let offset = (state.slideIndex - i + slides.length) % slides.length;
+          if (Math.abs(offset) > 1) offset = offset > 0 ? -1 : 1; // Ensuring only adjacent slides are displayed
           return <Slide slide={slide} offset={offset} key={i} />;
         })}
         <button
@@ -204,17 +223,6 @@ function Projects() {
 
         .slideContent:hover .slideBackground {
           filter: blur(5px);
-        }
-
-        .slideContentInner {
-          transform-style: preserve-3d;
-          transform: translateZ(2rem);
-          text-shadow: 0 0.1rem 1rem #000;
-          opacity: 0;
-        }
-
-        .slide[data-active] .slideContentInner {
-          opacity: 1;
         }
 
         .slideHoverOverlay {
