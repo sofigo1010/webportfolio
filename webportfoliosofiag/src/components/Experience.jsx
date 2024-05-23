@@ -43,7 +43,7 @@ const Experience = () => {
   return (
     <section id="experiencia" className="p-6 flex flex-col items-center">
       <h2 className="text-2xl uppercase mb-6">general work Experience</h2>
-      <div className="grid grid-cols-1 w-full h-full md:grid-cols-1 lg:grid-cols-1 gap-6">
+      <div className="grid grid-cols-1 w-full md:grid-cols-1 lg:grid-cols-1 gap-6">
         {experiences.map((experience, index) => (
           <ExperienceItem
             key={index}
