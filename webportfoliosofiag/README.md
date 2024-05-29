@@ -1,20 +1,26 @@
-# Astro Starter Kit: Basics
+# Web Portfolio
 
-```sh
-npm create astro@latest -- --template basics
-```
+This project is a personal web portfolio designed to showcase web development skills and highlighted projects. It utilizes a combination of modern technologies to achieve a responsive and functional design.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Technologies Used
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Astro**: Used for efficient static rendering and the integration of various UI frameworks without sacrificing performance.
+- **React**: Employed to build interactive components using a declarative design model.
+- **Tailwind CSS**: A CSS framework that allows for quick designing directly within the HTML, leveraging its utilities for a responsive and consistent design.
+- **CSS**: Used for custom styles where specific adjustments are needed outside of Tailwind.
+- **HTML**: Provides the semantic structure of the site.
+- **JavaScript**: Scripts to add additional interactivity to the React components.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Features
+
+- **Responsive Design**: Ensures the portfolio looks good on devices of all sizes.
+- **Fast Loading**: Thanks to Astro, the site is pre-rendered on the server, resulting in very fast loading times.
+- **Interactivity**: React allows users to interact with the site in a fluid and dynamic manner.
+
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
+Inside of the Astro project, you'll see the following folders and files:
 
 ```text
 /
@@ -32,9 +38,9 @@ Inside of your Astro project, you'll see the following folders and files:
 
 Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+There's nothing special about `src/components/`, but that's where I like to put any Astro/React/Vue/Svelte/Preact components.
 
-Any static assets, like images, can be placed in the `public/` directory.
+Any static assets, like images, are placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -49,6 +55,3 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
