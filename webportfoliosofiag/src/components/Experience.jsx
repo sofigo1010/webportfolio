@@ -21,7 +21,7 @@ const ExperienceItem = ({ title, date, description }) => {
       <div className="flex justify-between items-center">
         <div>
           <h3 className="text-lg font-bold text-left">{title}</h3>
-          <p className="text-sm text-white text-left">{date}</p>
+          <p className="text-sm text-white text-left font-bold opacity-80">{date}</p>
         </div>
         <button
           className="text-white px-2 py-1 rounded hover:scale-110 transition"
@@ -31,7 +31,7 @@ const ExperienceItem = ({ title, date, description }) => {
         </button>
       </div>
       {isExpanded && (
-        <div className="text-white text-sm mt-4 text-center">
+        <div className="text-white text-sm mt-4 text-center font-bold opacity-90">
           <p>{description}</p>
         </div>
       )}
@@ -42,7 +42,7 @@ const ExperienceItem = ({ title, date, description }) => {
 const Experience = () => {
   return (
     <section id="experiencia" className="p-6 flex flex-col items-center">
-      <h2 className="text-2xl uppercase mb-6">general work Experience</h2>
+      <h2 className="text-2xl uppercase font-bold mb-6">general work Experience</h2>
       <div className="grid grid-cols-1 w-full md:grid-cols-1 lg:grid-cols-1 gap-6">
         {experiences.map((experience, index) => (
           <ExperienceItem

@@ -163,7 +163,7 @@ function Projects() {
 
   return (
     <section id="projects" className="p-6 flex flex-col items-center">
-      <h2 className="text-2xl uppercase mb-6">Projects</h2>
+      <h2 className="text-2xl uppercase mb-6 font-bold">Projects</h2>
       <div className="slides relative overflow-hidden w-full h-96">
         <button
           className="absolute top-1/2 left-4 transform -translate-y-1/2 text-white text-5xl z-10"
